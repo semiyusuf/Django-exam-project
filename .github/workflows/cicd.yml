@@ -3,9 +3,9 @@ name: CI/CD
 on:
   push:
     branches: [main] # deploy when you push to main
-  workflow_dispatch:
   pull_request:
     branches: [main] # run tests on PRs
+  workflow_dispatch:
 
 jobs:
   # -------- CI: run Django tests --------
