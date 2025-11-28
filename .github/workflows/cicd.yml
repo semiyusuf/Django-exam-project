@@ -26,7 +26,7 @@ jobs:
           pip install -r mysite1/requirements.txt
 
       - name: Run Django tests
-        run: python manage.py test
+        run: python mysite1/manage.py test
 
   # -------- CD: build image + push to Docker Hub + deploy --------
   deploy:
