@@ -2,9 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [main] # deploy when you push to main
+    branches: [userCreation] # deploy when you push to main
   pull_request:
-    branches: [main] # run tests on PRs
+    branches: [userCreation] # run tests on PRs
   workflow_dispatch:
 
 jobs:
