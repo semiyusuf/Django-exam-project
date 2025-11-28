@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  django:
+    build: .
+    container_name: django_app
+    volumes:
+      - .:/app
+      - static_volume:/static
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "1715:80"
+    volumes:
+      - ./static:/code/static
+      - static_volume:/static
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - django
+
+volumes:
+  static_volume:
