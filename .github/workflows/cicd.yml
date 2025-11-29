@@ -47,10 +47,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./mysite1
           push: true
           # IMPORTANT: this must match the repo:tag your Azure Web App uses
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mysite1-django:v3hub
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}yusufsaladyusuf/mysite1-django:v3hub
 
       - name: Deploy to Azure Web App (container)
         uses: azure/webapps-deploy@v3
